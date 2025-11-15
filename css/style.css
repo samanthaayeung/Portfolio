@@ -172,6 +172,17 @@ p {
     font-size: clamp(1.125rem, 2vw, 1.25rem); /* min 18px, max 20px */
     line-height: 1.5;
     letter-spacing: normal;
+    color: var(--color-grey-2);
+    text-align: left;
+    transition: color 0.2s ease;
+
+}
+
+.aside-nav-button:hover {
+    color: var(--color-black)
+}
+
+.aside-nav-button.active {
     color: var(--color-black);
 }
 
@@ -413,14 +424,16 @@ footer {
 
   .case-study-content {
       display: grid;
-      grid-template-columns: 14% 1fr;
+      grid-template-columns: minmax(12%, 16%) 1fr minmax(12%, 16%);
       padding: clamp(1.25rem, 4vw, 2.5rem);  
+      overflow: visible;
+
     }
 
   .content-nav {
-      position: sticky;
-      align-items: flex-start;
-    
+    position: sticky;
+    top: 7.5rem;   /* adjust this for your desired offset */
+    align-self: start;
   }
 
   .case-study-body {
@@ -558,7 +571,11 @@ footer {
     header.open::before {
       height: var(--nav-blur-height, 250px);
     }
-  
+
+.case-study-content {
+    grid-template-columns: minmax(12%, 16%) 1fr ;
+
+}
 /* ========== Footer ========== */
 
     footer {

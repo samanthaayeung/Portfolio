@@ -26,3 +26,41 @@ if (header && navbar && menu && hamburger) {
     updateBlurHeight(isOpen);
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".aside-nav-button");
+
+  const sections = Array.from(navLinks).map(link =>
+    document.querySelector(link.getAttribute("href"))
+  );
+
+  const offset = 7.5 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 7.5rem → px
+
+  function updateActiveLink() {
+    sections.forEach((section, index) => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if (
+        sectionTop <= offset &&
+        (index === sections.length - 1 || sections[index + 1].getBoundingClientRect().top > offset)
+      ) {
+        navLinks.forEach(link => link.classList.remove("active"));
+        navLinks[index].classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveLink);
+  window.addEventListener("resize", updateActiveLink);
+
+  // Click event: only one active
+  navLinks.forEach((link, index) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+  // Initial check
+  updateActiveLink();
+});
