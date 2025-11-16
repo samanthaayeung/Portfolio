@@ -64,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial check
   updateActiveLink();
 });
+
