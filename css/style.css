@@ -456,6 +456,14 @@ footer {
 
     }
 
+    /* .grid-centre {
+        grid-column: 2 / span 1;
+    }
+
+    .with-right {
+        grid-column: 2 / span 2;
+    } */
+
   .content-nav {
     position: sticky;
     top: 7.5rem;   /* adjust this for your desired offset */
