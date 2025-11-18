@@ -1,7 +1,7 @@
 /* Color variables */
 
 :root {
-    --color-black: #191818;
+    --color-black: #2F2C3E;
     --color-white: #FDFDFD;
     --color-grey-1: #EDEDED;
     --color-grey-2: #726D6D;
@@ -72,7 +72,7 @@
 /* H1 */
 h1 {
     font-family: 'Sentient', 'Source Serif Pro', serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(2rem, 5vw, 3.75rem); /* min 36px, max 60px */
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -83,7 +83,7 @@ h1 {
   /* H2 */
   h2 {
     font-family: 'Sentient', 'Source Serif Pro', serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(2rem, 4.2vw, 3.125rem); /* min 32px, max 50px */
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -94,7 +94,7 @@ h1 {
   /* H3 */
   h3 {
     font-family: 'Sentient', 'Source Serif Pro', serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(1.5rem, 3vw, 2.25rem); /* min 24px, max 36px */
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -105,7 +105,7 @@ h1 {
   /* H4 */
   h4 {
     font-family: 'Sentient', 'Source Serif Pro', serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(1.375rem, 3vw, 1.75rem); /* min 22px, max 28px */
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -279,7 +279,7 @@ header {
       align-items: center;
       gap: 0.75rem;
       font-family: 'Sentient', 'Source Serif Pro', serif;
-      font-weight: 400;
+      font-weight: 300;
       font-size: clamp(1.25rem, 3vw, 1.5rem); /* min 22px, max 28px */
       line-height: 1.2;
       letter-spacing: -0.02em;
