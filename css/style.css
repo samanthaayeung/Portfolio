@@ -518,11 +518,10 @@ footer {
       position: relative;       /* needed for pseudo-element */
       overflow: hidden;          /* clips SVG edges */
       transition: transform 0.2s ease;
-      /* border: black 1px solid; */
 
   }
 
-  .case-study-card:hover {
+  .case-study-card, .case-study-card-2:hover {
     background-color: var(--color-white);
   }
 
@@ -535,7 +534,7 @@ footer {
     transition: opacity 0.25s ease;
   }
   
-  .case-study-card:hover .border-svg {
+  .case-study-card, .case-study-card-2:hover .border-svg {
     opacity: 1;
   }
   
@@ -590,6 +589,40 @@ footer {
       justify-content: center;
       gap: 0.25rem;
       }
+
+  /* ========== Read more section ========== */
+
+  .read-more {
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .more-work {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+       .case-study-card-2 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1000px;
+      padding: 1.25rem;
+      /* margin: 10px; */
+      gap: 2rem;
+      border-radius: 0.75rem;
+      position: relative;       /* needed for pseudo-element */
+      overflow: hidden;          /* clips SVG edges */
+      transition: transform 0.2s ease;
+
+  }
+
+
+  .horizontal-viz {
+    aspect-ratio: 16 / 9;
+
+  }
 
 
 
@@ -656,11 +689,11 @@ footer {
       padding-right: 7rem;
     }
 
-    .case-study-card {
+    /* .case-study-card {
         flex-direction: column;
         height: auto;
         gap: 0.75rem;
-      }
+      } */
 
     .square-viz {
         width: 100%;
