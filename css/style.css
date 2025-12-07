@@ -521,7 +521,7 @@ footer {
 
   }
 
-  .case-study-card, .case-study-card-2:hover {
+  .case-study-card:hover, .case-study-card-2:hover {
     background-color: var(--color-white);
   }
 
@@ -534,8 +534,12 @@ footer {
     transition: opacity 0.25s ease;
   }
   
-  .case-study-card, .case-study-card-2:hover .border-svg {
+  .case-study-card:hover .border-svg {
     opacity: 1;
+  }
+
+  .case-study-card-2:hover .border-svg {
+      opacity: 1;
   }
   
   /* make SVG fill the card */
