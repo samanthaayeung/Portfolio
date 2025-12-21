@@ -594,6 +594,10 @@ footer {
       gap: 0.25rem;
       }
 
+  .mobile-prototype {
+    aspect-ratio: 9 / 16;
+  }
+
   /* ========== Read more section ========== */
 
   .read-more {
