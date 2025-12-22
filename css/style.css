@@ -594,6 +594,8 @@ footer {
       gap: 0.25rem;
       }
 
+  /* ========== Figma prototype iframe ========== */
+     
   .mobile-prototype {
     aspect-ratio: 9 / 16;
   }
