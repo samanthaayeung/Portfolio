@@ -227,7 +227,7 @@ h1 {
   h5 {
     font-family: 'SF Pro Mono','Geist', sans-serif;
     font-weight: 400;
-    font-size: clamp(1.125rem, 2vw, 1rem); /* min 18px, max 20px */
+    font-size: clamp(0.875rem, 2vw, 1rem); /* min 16px, max 20px */
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: normal;
@@ -734,7 +734,7 @@ footer {
       max-width: 1000px;
       padding: 1.25rem;
       /* margin: 10px; */
-      gap: 2rem;
+      gap: 1.25rem;
       border-radius: 0.75rem;
       position: relative;       /* needed for pseudo-element */
       overflow: hidden;          /* clips SVG edges */
@@ -833,7 +833,7 @@ footer {
     }
 
     .case-study-card-text {
-        gap: 0.75rem;
+        gap: 0.5rem;
         flex-shrink: 1;
     }
 
