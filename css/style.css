@@ -167,6 +167,17 @@
   font-display: swap;
 }
 
+/* ========== SF Pro Mono Font import ========== */
+
+  /* Regular – 400 */
+@font-face {
+  font-family: 'SF Pro Mono';
+  src: url('/assets/fonts/sfmono-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ========== Text styles ========== */
 
 /* H1 */
@@ -184,7 +195,7 @@ h1 {
   h2 {
     font-family: 'Tiempos Text', 'Source Serif Pro', serif;
     font-weight: 400;
-    font-size: clamp(2rem, 4.2vw, 3.125rem); /* min 32px, max 50px */
+    font-size: clamp(2rem, 4.2vw, 3rem); /* min 32px, max 50px */
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--color-black);
@@ -214,9 +225,9 @@ h1 {
   
   /* H5 */
   h5 {
-    font-family: 'SF Pro','Geist', sans-serif;
+    font-family: 'SF Pro Mono','Geist', sans-serif;
     font-weight: 400;
-    font-size: clamp(1.125rem, 2vw, 1.25rem); /* min 18px, max 20px */
+    font-size: clamp(1.125rem, 2vw, 1rem); /* min 18px, max 20px */
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: normal;
