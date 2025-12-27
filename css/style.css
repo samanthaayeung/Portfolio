@@ -508,7 +508,6 @@ footer {
 
   .case-study-card {
       display: flex;
-      flex-direction: row;
       width: 100%;
       max-width: 1000px;
       padding: 1.25rem;
@@ -679,6 +678,10 @@ footer {
     .navbar {
         width: 90vw;
     }
+
+  .case-study-card {
+
+  }
 
 .case-study-content {
     grid-template-columns: minmax(12%, 16%) 1fr ;
