@@ -599,6 +599,10 @@ footer {
     aspect-ratio: 9 / 16;
   }
 
+  .presentation {
+    aspect-ratio: 16 / 9;
+  }
+
   /* ========== Read more section ========== */
 
   .read-more {
@@ -679,9 +683,6 @@ footer {
         width: 90vw;
     }
 
-  .case-study-card {
-
-  }
 
 .case-study-content {
     grid-template-columns: minmax(12%, 16%) 1fr ;
