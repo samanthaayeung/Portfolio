@@ -348,7 +348,8 @@ p {
 }
 
 #backToTop:hover {
-  background-color: var(--color-grey-3);
+  background-color: var(--color-black);
+  border: 2px solid var(--color-black);
   color: var(--color-white);
 }
 
@@ -573,8 +574,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 11.25rem 2.5rem 11.25rem;
-  }
+    padding-top: clamp(3.75rem, 10vw, 5rem); /* 100–140px */
+    padding-right: clamp(1.25rem, 4vw, 3.75rem); /* 32–60px */
+    padding-bottom: clamp(2.5rem, 6vw, 5rem);   /* 40–80px */
+    padding-left: clamp(1.25rem, 4vw, 3.75rem);   /* 32–60px */  }
 
     .featured-work-wrapper {
     display: flex;
@@ -589,7 +592,8 @@ footer {
   }
 
   .featured-work {
-    max-width: 1000px;
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
   }
 
   /* case study pages */
@@ -857,11 +861,6 @@ footer {
         gap: 0.75rem;
     }
 
-    .featured {
-      padding-left: 7rem;
-      padding-right: 7rem;
-    }
-
     /* .case-study-card {
         flex-direction: column;
         height: auto;
@@ -876,9 +875,9 @@ footer {
         flex-shrink: 1;
     }
 
-    .featured {
+    /* .featured {
         padding: 2.5rem 6rem 2.5rem 6rem;
-    }
+    } */
 
     .case-study-card-text {
         gap: 0.5rem;
@@ -896,9 +895,9 @@ footer {
       padding-right: 1rem;
     }
 
-    .featured-work {
-        gap: 0.75rem;
-    }
+  .featured-work {
+    display: grid;
+    grid-template-columns: 1fr;
 
     .case-study-details-all {
         order: 1;
