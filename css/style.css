@@ -787,7 +787,7 @@ footer {
       padding: 1.25rem;
       /* margin: 10px; */
       gap: 1.25rem;
-      border-radius: 0.75rem;
+      /* border-radius: 0.75rem; */
       position: relative;       /* needed for pseudo-element */
       overflow: hidden;          /* clips SVG edges */
       transition: transform 0.2s ease;
