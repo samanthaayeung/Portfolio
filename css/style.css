@@ -651,6 +651,10 @@ footer {
   object-fit: cover;
   } */ 
 
+  .none-mobile {
+    display: flex;
+  }
+
   .pt-l {
       padding-top: clamp(1.25rem, 2.22vw, 2rem);
   }
@@ -898,6 +902,7 @@ footer {
   .featured-work {
     display: grid;
     grid-template-columns: 1fr;
+  }
 
     .case-study-details-all {
         order: 1;
