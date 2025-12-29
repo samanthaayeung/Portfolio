@@ -109,26 +109,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-// ============================
 // WORK BUTTON (SAME-PAGE CLICK)
-// ============================
-
 const workButton = document.querySelector(".work-button");
 const workSection = document.getElementById("work");
 
-// Only attach smooth scroll if we're on the index page
-if (workButton && workSection && window.location.pathname.endsWith("index.html")) {
+if (workButton && workSection) {
   workButton.addEventListener("click", (e) => {
+    // Only prevent default if the element exists on this page
     e.preventDefault();
 
     const targetY = workSection.offsetTop - OFFSET_PX;
 
     smoothScrollTo(targetY, 500, () => {
-      // After scroll completes, update URL hash without jumping
+      // Update URL hash without jumping
       history.replaceState(null, "", "#work");
     });
   });
 }
+
 
 // ===================================
 // WORK BUTTON (CROSS-PAGE LOAD)
