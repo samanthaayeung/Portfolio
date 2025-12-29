@@ -558,6 +558,16 @@ footer {
 
 /* home page */
 
+.home-header {
+    background: linear-gradient(
+    to bottom, 
+    #F9D4FF 0%,       /* Top color */
+    #FFFFFF 20%,      /* Start of white */
+    #FFFFFF 85%,      /* End of white */
+    #FFA976 100%      /* Bottom color */
+  );
+}
+
   .hero {
     width: 100%; /* fill the viewport width */
     display: flex;
