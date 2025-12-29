@@ -27,22 +27,50 @@ if (header && navbar && menu && hamburger) {
   });
 }
 
+// ==============================
+// GLOBAL OFFSET + SMOOTH SCROLL
+// ==============================
+
+const OFFSET_REM = 7.5;
+const OFFSET_PX =
+  OFFSET_REM * parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+function smoothScrollTo(y, duration = 500, callback = null) {
+  const startY = window.scrollY;
+  const diff = y - startY;
+  const startTime = performance.now();
+
+  function frame(time) {
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease =
+      progress < 0.5
+        ? 2 * progress * progress
+        : -1 + (4 - 2 * progress) * progress;
+
+    window.scrollTo(0, startY + diff * ease);
+
+    if (elapsed < duration) requestAnimationFrame(frame);
+    else if (callback) callback();
+  }
+
+  requestAnimationFrame(frame);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".aside-nav-button");
-  const offsetRem = 7.5;
-  const offsetPx = offsetRem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 
-  // Create observer root margin so "active" triggers when section is 7.5rem below top
   const options = {
     root: null,
-    rootMargin: `-${offsetPx}px 0px 0px 0px`,
+    rootMargin: `-${OFFSET_PX}px 0px 0px 0px`,
     threshold: 0
   };
 
   const sectionMap = new Map();
   navLinks.forEach(link => {
     const section = document.querySelector(link.getAttribute("href"));
-    sectionMap.set(section, link);
+    if (section) sectionMap.set(section, link);
   });
 
   let isAutoScrolling = false;
@@ -53,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const activeLink = sectionMap.get(entry.target);
-
         navLinks.forEach(l => l.classList.remove("active"));
         if (activeLink) activeLink.classList.add("active");
       }
@@ -62,35 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sectionMap.forEach((_, section) => observer.observe(section));
 
-  // Smooth scroll function
-  function smoothScrollTo(y, duration = 500, callback = null) {
-    const startY = window.scrollY;
-    const diff = y - startY;
-    const startTime = performance.now();
-
-    function frame(time) {
-      const elapsed = time - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress < 0.5
-        ? 2 * progress * progress
-        : -1 + (4 - 2 * progress) * progress;
-
-      window.scrollTo(0, startY + diff * ease);
-
-      if (elapsed < duration) requestAnimationFrame(frame);
-      else if (callback) callback();
-    }
-
-    requestAnimationFrame(frame);
-  }
-
-  // Handle nav clicks
+  // Aside nav smooth scroll
   navLinks.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
 
       const section = document.querySelector(link.getAttribute("href"));
-      const targetY = section.offsetTop - offsetPx;
+      if (!section) return;
+
+      const targetY = section.offsetTop - OFFSET_PX;
 
       isAutoScrolling = true;
       navLinks.forEach(l => l.classList.remove("active"));
@@ -101,21 +108,46 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
 
-  const backToTopButton = document.getElementById("backToTop");
+// ============================
+// WORK BUTTON (SAME-PAGE CLICK)
+// ============================
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopButton.classList.add("show");
-    } else {
-      backToTopButton.classList.remove("show");
-    }
-  });
+const workButton = document.querySelector(".work-button");
+const workSection = document.getElementById("work");
 
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+// Only attach smooth scroll if we're on the index page
+if (workButton && workSection && window.location.pathname.endsWith("index.html")) {
+  workButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const targetY = workSection.offsetTop - OFFSET_PX;
+
+    smoothScrollTo(targetY, 500, () => {
+      // After scroll completes, update URL hash without jumping
+      history.replaceState(null, "", "#work");
     });
   });
+}
+
+// ===================================
+// WORK BUTTON (CROSS-PAGE LOAD)
+// ===================================
+
+window.addEventListener("load", () => {
+  if (window.location.hash !== "#work") return;
+
+  const workSection = document.getElementById("work");
+  if (!workSection) return;
+
+  // Cancel browser’s default jump
+  window.scrollTo(0, 0);
+
+  // Apply offset after layout is complete
+  requestAnimationFrame(() => {
+    const y = workSection.offsetTop - OFFSET_PX;
+    window.scrollTo(0, y); // no smooth scroll
+  });
+});
+
+})
