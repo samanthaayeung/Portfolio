@@ -257,7 +257,7 @@ p {
   }
 
   .copyright-text {
-    color: var(--color-grey-2);
+    color: var(--color-grey-3);
 }
 
 .grey {
@@ -558,12 +558,12 @@ footer {
 
 /* home page */
 
-.home-header {
+.bg-gradient {
     background: linear-gradient(
     to bottom, 
     #F9D4FF 0%,       /* Top color */
     #FFFFFF 20%,      /* Start of white */
-    #FFFFFF 85%,      /* End of white */
+    #FFFFFF 90%,      /* End of white */
     #FFA976 100%      /* Bottom color */
   );
 }
