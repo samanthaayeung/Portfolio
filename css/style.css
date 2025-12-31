@@ -797,9 +797,23 @@ footer {
 
   /* about page */
 .max-width-desktop {
-  max-width: 60vw;
+  max-width: 55vw;
 }
 
+.about-contents {
+  column-count: 3;
+  column-gap: 0;
+}
+
+.about-pfp {
+  align-items: center;
+  justify-content: center;
+}
+
+.about-bio {
+  color: var(--color-grey-3);
+  line-height: 1.5;
+}
 
   /* ========== Media queries ========== */
 
@@ -886,6 +900,11 @@ footer {
 
     .max-width-desktop {
   max-width: 100vw;
+    }
+
+  .about-contents {
+  column-count: 2;
+
 }
 
   }
@@ -927,5 +946,9 @@ footer {
     .none-desktop {
         display: flex;
     }
+
+      .about-contents {
+  column-count: 1;
+}
 
   }
