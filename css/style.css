@@ -795,12 +795,17 @@ footer {
 
   }
 
+  /* about page */
+.max-width-desktop {
+  max-width: 60vw;
+}
 
 
   /* ========== Media queries ========== */
 
   /* Tablet: smaller than desktop */
   @media (max-width: 800px) {
+
     .hamburger {
       display: block;
     }
@@ -878,6 +883,10 @@ footer {
         gap: 0.5rem;
         flex-shrink: 1;
     }
+
+    .max-width-desktop {
+  max-width: 100vw;
+}
 
   }
 
