@@ -571,8 +571,6 @@ footer {
   .hero {
     width: 100%; /* fill the viewport width */
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* 12px */
     padding-top: clamp(3.75rem, 10vw, 5rem); /* 100–140px */
     padding-right: clamp(1.25rem, 4vw, 3.75rem); /* 32–60px */
     padding-bottom: clamp(2.5rem, 10vw, 3.75rem);  
