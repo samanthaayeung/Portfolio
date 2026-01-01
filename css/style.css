@@ -275,6 +275,24 @@ p {
     border-left: 2px solid var(--color-grey-3);
 }
 
+.appendix {
+    font-family: 'Tiempos Text', 'Source Serif Pro', serif;
+    font-weight: 400;
+      text-transform: none;
+
+    /* font-style: italic; */
+
+
+}
+
+.bio-link {
+  text-decoration: underline;
+}
+
+.bio-link:hover {
+  color: blue;
+}
+
   /* ========== Button styles ========== */
 
   button {
@@ -811,8 +829,14 @@ footer {
 }
 
 .about-bio {
+  font-size: clamp(1.25rem, 3vw, 1.75rem); 
   color: var(--color-grey-3);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.appendix-wrapper {
+  column-count: 2;
+  column-gap: 2rem;
 }
 
   /* ========== Media queries ========== */
@@ -907,7 +931,7 @@ footer {
 
 }
 
-  }
+
 
 
   
@@ -950,5 +974,8 @@ footer {
       .about-contents {
   column-count: 1;
 }
+.appendix-wrapper {
+  column-count: 1;
 
   }
+  }}
