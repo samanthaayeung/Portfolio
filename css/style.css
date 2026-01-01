@@ -519,12 +519,16 @@ footer {
     flex-direction: column;
 }
 
-.flex-row {
+.flex-row,
+.flex-row-desktop,
+.flex-row-desktop-only {
     flex-direction: row;
 }
 
-.flex-row-desktop {
-    flex-direction: row;
+.about-text {
+  max-width: 55vw;
+  flex: 0 1 auto;
+
 }
 
 .space-between {
@@ -826,6 +830,7 @@ footer {
 .about-pfp {
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .about-bio {
@@ -835,8 +840,19 @@ footer {
 }
 
 .appendix-wrapper {
-  column-count: 2;
-  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto); /* enough rows for your items */
+  gap: 1rem;
+}
+
+.pfp {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+  aspect-ratio: 1/1;
 }
 
   /* ========== Media queries ========== */
@@ -922,12 +938,18 @@ footer {
         flex-shrink: 1;
     }
 
-    .max-width-desktop {
-  max-width: 100vw;
-    }
+
 
   .about-contents {
-  column-count: 2;
+  column-count: 2;}
+
+  .flex-row-desktop-only {
+    flex-direction: column;
+  }
+
+  .about-text {
+    max-width: 100vw;
+  }
 
 }
 
@@ -975,7 +997,8 @@ footer {
   column-count: 1;
 }
 .appendix-wrapper {
-  column-count: 1;
-
+  grid-template-columns: 1fr;
+ grid-template-rows: none;      /* reset */
+    grid-auto-flow: row;
   }
-  }}
+  }
