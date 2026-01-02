@@ -184,7 +184,7 @@
 h1 {
     font-family: 'Tiempos Text', 'Source Serif Pro', serif;
     font-weight: 400;
-    font-size: clamp(2rem, 5vw, 3.75rem); /* min 36px, max 60px */
+    font-size: clamp(2rem, 5vw, 3.25rem); /* min 36px, max 60px */
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--color-black);
@@ -195,7 +195,7 @@ h1 {
   h2 {
     font-family: 'Tiempos Text', 'Source Serif Pro', serif;
     font-weight: 400;
-    font-size: clamp(2rem, 4.2vw, 3rem); /* min 32px, max 50px */
+    font-size: clamp(1.75rem, 4.2vw, 2.75rem); /* min 32px, max 50px */
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--color-black);
@@ -693,6 +693,10 @@ footer {
     padding-top: 3rem;
 }
 
+.mt-m {
+  margin-top: 1.25rem;
+}
+
 .mt-xxl {
     margin-top: 3.5rem;
 }
@@ -834,7 +838,7 @@ footer {
 }
 
 .about-bio {
-  font-size: clamp(1.25rem, 3vw, 1.75rem); 
+  font-size: clamp(1.75rem, 3vw, 2rem); 
   color: var(--color-grey-3);
   line-height: 1.6;
 }
@@ -855,7 +859,26 @@ footer {
   aspect-ratio: 1/1;
 }
 
+.inline-viz {
+  display: inline;           /* Keeps image in text flow */
+  height: 3rem;            /* Scales to text height (1.2x for slight emphasis) */
+  width: auto;              /* Maintains aspect ratio */
+  vertical-align: middle;   /* Centers with text baseline */
+  margin: 0 2px;           /* Small breathing room */
+}
+
   /* ========== Media queries ========== */
+
+  /*just for about page*/
+  @media (max-width: 1024px) {
+    .flex-row-desktop-only {
+      flex-direction: column;
+    }
+
+    .about-text {
+      max-width: 100vw;
+    }
+  }
 
   /* Tablet: smaller than desktop */
   @media (max-width: 800px) {
