@@ -870,7 +870,7 @@ footer {
   /* ========== Media queries ========== */
 
   /*just for about page*/
-  @media (max-width: 1024px) {
+  @media (max-width: 1300px) {
     .flex-row-desktop-only {
       flex-direction: column;
     }
