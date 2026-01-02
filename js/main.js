@@ -28,6 +28,17 @@ if (header && navbar && menu && hamburger) {
 }
 
 // ==============================
+// COPY EMAIL
+// ==============================
+
+function copyEmail() {
+  const email = "samanthayeung0430@gmail.com";
+  navigator.clipboard.writeText(email).then(() => {
+    alert("Email copied!");
+  });
+}
+
+// ==============================
 // GLOBAL OFFSET + SMOOTH SCROLL
 // ==============================
 
