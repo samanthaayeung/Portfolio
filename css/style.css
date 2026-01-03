@@ -300,20 +300,28 @@ p {
     border: none;
   }
 
-  .nav-button {
-    font-family: 'SF Pro','Geist', sans-serif;
-    font-weight: 400;
-    font-size: 1rem; /* 16px base */
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: var(--color-black);
+.nav-button {
+  font: 400 1rem/1.5 'SF Pro','Geist', sans-serif;
+  color: var(--color-black);
+  position: relative;
+}
 
-  }
+.nav-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s;
+}
 
-  /* .nav-button:hover {
-    color: var(--color-grey-2);
-    transition: 0.7s;
-  } */
+.nav-button:hover::after {
+  transform: scaleX(1);
+}
 
 .aside-nav-button {
     font-family: 'SF Pro','Geist', sans-serif;
@@ -489,9 +497,7 @@ footer {
 .footer-nav {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
     flex-wrap: wrap;
-    align-items: top;
 }
 
 .footer-nav-col {
@@ -508,7 +514,6 @@ footer {
 
 .copy-email:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 
 /* ========== Layout ========== */
