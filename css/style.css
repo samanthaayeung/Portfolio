@@ -252,6 +252,16 @@ p {
   color: var(--color-grey-3);
 }
 
+.body {
+  font-family: "SF Pro", "Geist", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px base */
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--color-grey-3);
+  margin-left: 1rem;
+}
+
 .copyright-text {
   color: var(--color-grey-3);
 }
@@ -285,6 +295,10 @@ p {
 
 .bio-link:hover {
   color: blue;
+}
+
+.bullet-list {
+  list-style-type: circle;
 }
 
 /* ========== Button styles ========== */
