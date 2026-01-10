@@ -594,6 +594,44 @@ footer {
   align-items: flex-end;
 }
 
+/* ========== blur animation ========== */
+
+/* Page starts BLURRED */
+#page-content {
+  filter: blur(20px);
+  transition: filter 0.6s ease;
+}
+
+/* Unblur state */
+#page-content.is-unblurred {
+  filter: blur(0);
+}
+
+#page-blur {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#page-blur.is-hidden {
+  opacity: 0;
+}
+
+/* If NOT coming from a blur transition, start unblurred */
+.no-blur-transition #page-content {
+  filter: blur(0);
+}
+
+.no-blur-transition #page-blur {
+  opacity: 0;
+}
+
+
 /* home page */
 
 .bg-gradient {

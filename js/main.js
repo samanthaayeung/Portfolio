@@ -122,6 +122,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ===================================
+  // PAGE BLUR LOAD
+  // ===================================
+
+  (function () {
+    if (!sessionStorage.getItem('blur-transition')) {
+      document.documentElement.classList.add('no-blur-transition');
+    }
+  })();
+
+    const content = document.getElementById('page-content');
+  const overlay = document.getElementById('page-blur');
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+
+    if (
+      link.target === '_blank' ||
+      link.origin !== location.origin ||
+      link.href.includes('#')
+    ) return;
+
+    e.preventDefault();
+
+    // Tell next page to stay blurred
+    sessionStorage.setItem('blur-transition', 'true');
+
+    // Blur Page A
+    content.classList.remove('is-unblurred');
+    overlay.classList.remove('is-hidden');
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 300);
+  });
+
+    window.addEventListener('load', () => {
+    const content = document.getElementById('page-content');
+    const overlay = document.getElementById('page-blur');
+
+    requestAnimationFrame(() => {
+      content.classList.add('is-unblurred');
+      overlay.classList.add('is-hidden');
+      sessionStorage.removeItem('blur-transition');
+    });
+  });
+
   // WORK BUTTON (SAME-PAGE CLICK)
   const workButton = document.querySelector(".work-button");
   const workSection = document.getElementById("work");
