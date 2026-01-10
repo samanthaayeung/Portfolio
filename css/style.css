@@ -301,14 +301,65 @@ p {
   /* font-style: italic; */
 }
 
-.bio-link {
-  text-decoration: underline;
-}
-
-.bio-link:hover {
-  color: #C00EEF;
-}
-
+    .bio-link {
+      color: #334155;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+      display: inline;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1' y1='2' x2='9' y2='2' stroke='%23726d6d' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-size: 16px 4px;
+      background-position: 0 100%;
+      background-clip: padding-box;
+      -webkit-mask-image: 
+        linear-gradient(black, black),
+        linear-gradient(to right, black 100%, transparent 0%);
+      mask-image: 
+        linear-gradient(black, black),
+        linear-gradient(to right, black 100%, transparent 0%);
+      -webkit-mask-size: 100% calc(100% - 4px), 100% 4px;
+      mask-size: 100% calc(100% - 4px), 100% 4px;
+      -webkit-mask-position: 0 0, 0 100%;
+      mask-position: 0 0, 0 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-composite: source-over;
+      mask-composite: add;
+    }
+    
+    .bio-link:hover {
+      animation: bioLinkReveal 0.4s ease forwards;
+    }
+    
+    @keyframes bioLinkReveal {
+      0% {
+        -webkit-mask-size: 100% calc(100% - 4px), 0% 4px;
+        mask-size: 100% calc(100% - 4px), 0% 4px;
+      }
+      1% {
+        -webkit-mask-size: 100% calc(100% - 4px), 0% 4px;
+        mask-size: 100% calc(100% - 4px), 0% 4px;
+      }
+      100% {
+        -webkit-mask-size: 100% calc(100% - 4px), 100% 4px;
+        mask-size: 100% calc(100% - 4px), 100% 4px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1' y1='2' x2='9' y2='2' stroke='%23726d6d' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      }
+    }
+    
+    @keyframes underlineWipe {
+      0% {
+        clip-path: inset(0 100% 0 0);
+      }
+      1% {
+        clip-path: inset(0 100% 0 0);
+      }
+      100% {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+    
 .bullet-list {
   list-style-type: circle;
 }
