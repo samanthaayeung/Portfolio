@@ -302,7 +302,6 @@ p {
 }
 
     .bio-link {
-      color: #334155;
       text-decoration: none;
       position: relative;
       padding-bottom: 4px;
@@ -359,7 +358,7 @@ p {
         clip-path: inset(0 0 0 0);
       }
     }
-    
+
 .bullet-list {
   list-style-type: circle;
 }
