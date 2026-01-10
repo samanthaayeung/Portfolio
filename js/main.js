@@ -174,34 +174,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // ABOUT PAGE TILT
   // ===================================
 
-      const aboutPfp = document.querySelector('.about-pfp');
-    let isHovered = false;
-    let isScrolled = false;
-    
-    function updateTilt() {
-      if (isHovered || isScrolled) {
-        aboutPfp.classList.add('tilted');
-      } else {
-        aboutPfp.classList.remove('tilted');
-      }
+const aboutPfp = document.querySelector('.about-pfp');
+
+if (aboutPfp) {
+  let isHovered = false;
+  let isScrolled = false;
+
+  function updateTilt() {
+    if (isHovered || isScrolled) {
+      aboutPfp.classList.add('tilted');
+    } else {
+      aboutPfp.classList.remove('tilted');
     }
+  }
+
+  aboutPfp.addEventListener('mouseenter', () => {
+    isHovered = true;
+    updateTilt();
+  });
+
+  aboutPfp.addEventListener('mouseleave', () => {
+    isHovered = false;
+    updateTilt();
+  });
+
+  window.addEventListener('scroll', () => {
+    isScrolled = window.scrollY > 0;
+    updateTilt();
+  });
+}
+
     
-    // Handle hover
-    aboutPfp.addEventListener('mouseenter', () => {
-      isHovered = true;
-      updateTilt();
-    });
-    
-    aboutPfp.addEventListener('mouseleave', () => {
-      isHovered = false;
-      updateTilt();
-    });
-    
-    // Handle scroll
-    window.addEventListener('scroll', () => {
-      isScrolled = window.scrollY > 0;
-      updateTilt();
-    });
 
   // WORK BUTTON (SAME-PAGE CLICK)
   const workButton = document.querySelector(".work-button");
