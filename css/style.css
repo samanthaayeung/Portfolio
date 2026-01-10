@@ -8,6 +8,18 @@
   --color-grey-3: #454545;
 }
 
+/*text highlight color*/
+::selection {
+  background: #E37AFF;
+  color: #000; /* keep or change if needed */
+}
+
+/* Firefox */
+::-moz-selection {
+  background: #E37AFF;
+  color: #000;
+}
+
 /* Reset some default margins/paddings */
 * {
   margin: 0;
@@ -294,7 +306,7 @@ p {
 }
 
 .bio-link:hover {
-  color: blue;
+  color: #C00EEF;
 }
 
 .bullet-list {
