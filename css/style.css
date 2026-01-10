@@ -817,12 +817,11 @@ footer {
   stroke-linecap: round; /* rounded ends */
 }
 
-.square-viz {
+.pfp {
   /* width: 315px;            */
-  max-width: 40%;
+  max-width: 65%;
   min-width: 25%;
   height: auto;
-  aspect-ratio: 1 / 1; /* square */
   object-fit: cover; /* crop if needed */
   flex-shrink: 1; /* allow shrinking first */
 }
@@ -896,6 +895,11 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.about-pfp.tilted {
+transform: rotate(-3deg);
 }
 
 .about-bio {
@@ -912,13 +916,6 @@ footer {
   gap: 1rem;
 }
 
-.pfp {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
-  flex-shrink: 1;
-  aspect-ratio: 1/1;
-}
 
 .inline-viz {
   display: inline; /* Keeps image in text flow */
@@ -1001,7 +998,7 @@ footer {
         gap: 0.75rem;
       } */
 
-  .square-viz {
+  .pfp {
     width: 100%;
     height: auto;
     max-width: none;
