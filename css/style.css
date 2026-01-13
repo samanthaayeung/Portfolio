@@ -1016,6 +1016,7 @@ transform: rotate(-3deg);
     max-width: none;
     min-width: none;
     flex-shrink: 1;
+    padding: 1rem;
   }
 
   /* .featured {
