@@ -869,7 +869,7 @@ footer {
 
 .pfp {
   /* width: 315px;            */
-  max-width: 65%;
+  max-width: 60%;
   min-width: 25%;
   height: auto;
   object-fit: cover; /* crop if needed */
