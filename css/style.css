@@ -925,6 +925,9 @@ footer {
   position: relative; /* needed for pseudo-element */
   overflow: hidden; /* clips SVG edges */
   transition: transform 0.2s ease;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .horizontal-viz {
